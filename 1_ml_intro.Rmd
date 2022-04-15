@@ -8,6 +8,16 @@ header-includes:
   - \usepackage{wrapfig}
   - \usepackage{graphicx}
   - \usepackage{bm}
+  - \usepackage{hyperref}
+  - \hypersetup{
+    colorlinks=true,
+    linkcolor=magenta,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+  - \usefonttheme[onlymath]{serif}
 ---
 
 ```{r setup, include=FALSE}
@@ -73,7 +83,7 @@ Each session will be a mixture of:
     
 \vspace{1em}
 **Slides and code are available at**:
-\centering https://github.com/tsrobinson/ox_ml22
+\centering \url{https://github.com/tsrobinson/ox_ml22}
 
 ## Today's session
 
@@ -435,7 +445,7 @@ $$
 
 The goal is to find the *best* values of $\bm{\theta}$ and $b$ that "explains" the data
 
-  * Let's include b within $\bm{\theta}$ s.t. $\bm{\theta} = \{b, \theta_1,\cdots,\theta_k\}$
+  * Let's include b within $\bm{\theta}$ s.t. $\bm{\theta} = [b, \theta_1,\cdots,\theta_k]$
 
 ## MLE of logistic regression
 
@@ -490,7 +500,7 @@ ggplot(data = data.frame(x = 0), mapping = aes(x = x)) +
   theme_minimal() +
   theme(text = element_text(size = 20))
 ```
-## Gradient descent
+## Gradient descent algorithm
 
 To find the minimum of the negative log-likelihood we:
 
@@ -556,11 +566,11 @@ As we iteratively adjust the value of our parameter:
 
 * Or we get stuck in a rut and the estimator fails to find an even better parameter choice
 
-So we can scale our adjustment by the size of the gradient
+So we can scale the impact of the current gradient on the new parameter choice:
     
   * Let's call this hyperparameter the **learning rate** ($\lambda$)
     
-  * $\bm{\theta}_\text{New} = \lambda\bm{\theta} - \bm{\nabla}$
+  * $\bm{\theta}_\text{New} = \bm{\theta} - \lambda\bm{\nabla}$
     
 The choice of $\lambda$ is down to the researcher:
 
