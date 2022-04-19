@@ -1,6 +1,6 @@
 ---
 title: "ML extensions to OLS"
-subtitle: "Oxford Spring School in Advanced Research Methods, 2021"
+subtitle: "Oxford Spring School in Advanced Research Methods, 2022"
 author: "Dr Thomas Robinson, Durham University"
 date: "Day 2/5"
 output: beamer_presentation
