@@ -158,7 +158,7 @@ ML can also introduce issues of its own:
 ## Prediction and inference
 
 $$
-\hat{y_i} = \hat{\beta_0} + \hat{\beta_1}x_{1i} + e_i
+\hat{y_i} = \hat{\beta_0} + \hat{\beta_1}x_{1i}
 $$
 
 ML typically focuses on prediction problems instead of inference problems:
@@ -320,7 +320,7 @@ As a result:
 
 * These rules explain why the probability of two coin-flips is = 0.25:
   * $P(\text{Flip 1 = Heads})$ = 0.5
-  * $P(\text{Flip 2 = Heads} | \text{Flip 1 = Heads}) = P(\text{Flip 1 = Heads})$
+  * $P(\text{Flip 2 = Heads} | \text{Flip 1 = Heads}) = P(\text{Flip 2 = Heads})$
   * $P(\text{Flip 1 = Heads *and* Flip 2 = Heads}) = 0.5 \times 0.5 = 0.25$
 
 
@@ -361,7 +361,7 @@ where $\mathbf{X}$ is the data.
 Let's suppose that we have no prior knowledge over $\bm{\theta}$, so we'll drop the prior and focus specifically on the likelihood:
 
 $$
-\mathcal{L}(\bm{\theta}) = p(\mathbf{X} | \theta)
+\mathcal{L}(\bm{\theta}) = p(\mathbf{X} | \bm{\theta})
 $$
 *How would we calculate this?*
 
@@ -558,26 +558,6 @@ ggplot(data = data.frame(x = 0), mapping = aes(x = x)) +
   theme(text = element_text(size = 20))
 ```
 
-## Learning rate
-
-As we iteratively adjust the value of our parameter:
-
-* It's possible we keep jumping over the minima
-
-* Or we get stuck in a rut and the estimator fails to find an even better parameter choice
-
-So we can scale the impact of the current gradient on the new parameter choice:
-    
-  * Let's call this hyperparameter the **learning rate** ($\lambda$)
-    
-  * $\bm{\theta}_\text{New} = \bm{\theta} - \lambda\bm{\nabla}$
-    
-The choice of $\lambda$ is down to the researcher:
-
-* Overly-large values will prevent minimisation
-
-* Overly small values may take too long, or risk converging on *local* minima
-
 ##
 
 ```{r local_min}
@@ -597,6 +577,27 @@ ggplot(data = data.frame(x = 0), mapping = aes(x = x)) +
   theme_minimal() +
   theme(text = element_text(size = 20))
 ```
+
+
+## Learning rate
+
+As we iteratively adjust the value of our parameter:
+
+* It's possible we keep jumping over the minima
+
+* Or we get stuck in a rut and the estimator fails to find an even better parameter choice
+
+So we can scale the impact of the current gradient on the new parameter choice:
+    
+  * Let's call this hyperparameter the **learning rate** ($\lambda$)
+    
+  * $\bm{\theta}_\text{New} = \bm{\theta} - \lambda\bm{\nabla}$
+    
+The choice of $\lambda$ is down to the researcher:
+
+* Overly-large values will prevent minimisation
+
+* Overly small values may take too long, or risk converging on *local* minima
 
 ## Stochastic gradient descent
 
