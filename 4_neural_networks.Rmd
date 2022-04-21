@@ -437,14 +437,35 @@ We can also regularise the *nodes* of our network, via a process called **dropou
 
 Dropout has the effect of:
 
-* Increasing the variance of our model
+* Increasing the uncertainty of our model
 * Making the predictions *stochastic*
-* Training a model with dropout approximates a **Gaussian Process**
+* Approximating a **Gaussian Process**
+
+## Example of training **without** dropout
+
+![Keras sequential model without dropout](images/nn_wo_dropout.png)
+
+## Example of training **with** dropout
+
+![Keras sequential model without dropout](images/nn_w_dropout.png)
+
+## Takeaways
+
+Notice that **without** dropout:
+
+* Decline in loss is initially steeper
+* Validation loss starts to stabilise while training loss continues to decrease
+* A sign of overfitting!
+
+**With dropout**:
+
+* Model takes longer to reduce the loss
+* But we avoid overfitting (over the same number of epochs)
+* Example of better regularisation
 
 ## MIDAS neural network ([Lall and Robinson 2022](https://doi.org/10.1017/pan.2020.49)) \hyperlink{midas_details}{\beamerbutton{More information}}
 
 ![MIDAS network structure](images/midas_network.pdf)
-
 
 
 # Application: Neural networks and text

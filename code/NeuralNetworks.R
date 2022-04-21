@@ -81,7 +81,7 @@ history <- fit(
   x = as.matrix(x_train), 
   y = y_train, 
   batch_size = 50,
-  epochs = 30,
+  epochs = 50,
   validation_split = 0.30
 )
 
@@ -106,7 +106,7 @@ history2 <- fit(
   x = as.matrix(x_train), 
   y = y_train, 
   batch_size = 50,
-  epochs = 30,
+  epochs = 50,
   validation_split = 0.30
 )
 
