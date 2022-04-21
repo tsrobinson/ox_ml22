@@ -260,7 +260,7 @@ Intuitively, we want to select features of $X$ such that:
 * Dividing on those features yields more *certain* predictions about $\bm{y}_k$ for each $k$
 
 We call the increase in certainty as a result of splitting on a variable the **information gain**, denoted as 
-$$IG = I(\bm{y}^\text{Parent}) - \bigg( \frac{n_\text{Left}}{n_{\bm{y}^\text{Parent}}}I(\bm{y}^\text{Left}) + \frac{n_\text{Right}}{n_{\bm{X}^\text{Parent}}}I(\bm{y}^\text{Right}) \bigg)
+$$IG = I(\bm{y}^\text{Parent}) - \bigg( \frac{n_\text{Left}}{n_{\bm{y}^\text{Parent}}}I(\bm{y}^\text{Left}) + \frac{n_\text{Right}}{n_{\bm{y}^\text{Parent}}}I(\bm{y}^\text{Right}) \bigg)
 $$
 In turn, this will depend on:
 

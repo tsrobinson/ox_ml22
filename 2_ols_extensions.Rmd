@@ -14,8 +14,7 @@ header-includes:
     colorlinks=true,
     linkcolor=magenta,
     filecolor=magenta,      
-    urlcolor=cyan,
-    pdfpagemode=FullScreen,
+    urlcolor=cyan
     }
   - \usefonttheme[onlymath]{serif}
 ---
@@ -281,13 +280,13 @@ High variance means that the model is very sensitive to $\bm{X}$ -- the training
 
 So can't we just choose a low-variance, low-bias modeling strategy? Not quite!
 
-Assume we calculate the mean squared error of some new data $\bm{X'}$ given a trained model $\hat{f}$:
+Assume we could calculate the mean squared error of some new data $\bm{X'}$ given a trained model $\hat{f}$:
 $$
-\text{MSE} = \mathbb{E}[(\hat{f}(\bm{X'})  - \bm{y})^2].
+\text{MSE} = \mathbb{E}[(\hat{f}(\bm{X'})  - \bm{y'})^2].
 $$
 We can decompose this further:
 $$
-MSE = \underbrace{\mathbb{E}\big[(\hat{f}(\bm{X'})-\mathbb{E}[\bm{\hat{y}}])^2\big]}_{\text{Variance}} + \underbrace{\big(\mathbb{E}[\bm{\hat{y}}] - \bm{y}\big)^2}_{\text{Bias}^2}
+MSE = \underbrace{\mathbb{E}\big[(\hat{f}(\bm{X'})-\mathbb{E}[\bm{\hat{y}}])^2\big]}_{\text{Variance}} + \underbrace{\big(\mathbb{E}[\bm{\hat{y}}] - \bm{y'}\big)^2}_{\text{Bias}^2}
 $$
 
 So holding the MSE fixed, if we reduce the variance we must increase the bias

@@ -14,7 +14,6 @@ header-includes:
     linkcolor=magenta,
     filecolor=magenta,      
     urlcolor=cyan,
-    pdftitle={Overleaf Example},
     pdfpagemode=FullScreen,
     }
   - \usefonttheme[onlymath]{serif}
