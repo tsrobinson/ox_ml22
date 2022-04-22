@@ -277,14 +277,15 @@ S_L(\bm{X}) = \sum_{l=1}^{L}c_l \times w_l(\bm{X}^{(l)}),
 $$
 where:
 
-* $L$ indexes a series of weak learners
-* $c_l$ is a coefficient corresponding to the $l$th weak learner $w_l$
+* $w_l$ is $l$th weak learner model, for $l \in \{1,\ldots, L\}$ 
+* $c_l$ is a coefficient corresponding to the $l$th model
+* $S_L$ is the final prediction function
 
-To optimise $\bm{c}$ and $\bm{w} = \{w_1,\cdots,w_L\}$, we add the models sequentially to $S_L$, *reweighting* the data after each model
+To optimise $\bm{c}$ and $\bm{w} = \{w_1,\cdots,w_L\}$, we add the models sequentially to $S$, *reweighting* the data after each model
 
 The optimisation function at each iteration is defined as:
 $$
-\operatorname*{arg\,min}_{c_l,w_l} \sum_{i=1}^{N}e(y_i, s_{l-1}(\bm{x_i}) + c_l \times w_l(\bm{x_i}^{(l)}))
+\operatorname*{arg\,min}_{c_l,w_l} \sum_{i=1}^{N}e(y_i, S_{l-1}(\bm{x_i}) + c_l \times w_l(\bm{x_i}))
 $$
 
 where $e$ is the prediction error function
