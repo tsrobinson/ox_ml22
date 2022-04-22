@@ -132,7 +132,8 @@ yhat_test <- stacked_pred %*% train_wgts
 
 # Accuracy
 
-mean((yhat_test - y_test)^2)
+yhat_test_bin <- ifelse(yhat_test > 0.5, 1, 0)
+mean(yhat_test_bin == y_test)
 
 #### Extension exercise ####
 
